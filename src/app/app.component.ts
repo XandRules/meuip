@@ -3,15 +3,19 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from './maps';
 
 interface Position {
-  country:string;
-  country_code:string;
-  postcode:string;
-  restaurant:string;
-  road:string;
-  state:string;
-  state_district:string;
-  suburb:string;
-  town:string;
+  address : {
+    country:string;
+    country_code:string;
+    postcode:string;
+    restaurant:string;
+    road:string;
+    state:string;
+    state_district:string;
+    suburb:string;
+    town:string;
+  },
+  lat: string;
+  lon: string;
 }
 
 @Component({
@@ -49,7 +53,7 @@ export class AppComponent implements OnInit {
   getLocation(latitude: number, longitude: number) {
     this.map.getLocationReverse(latitude, longitude).subscribe(
       (data) => {
-        this.position = data.address;
+        this.position = data;
       }
     )
   }

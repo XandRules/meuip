@@ -5,6 +5,7 @@
     <thead>
       <tr>
         <th scope="col">Cidade</th>
+        <th scope="col">Estado</th>
         <th scope="col">IP</th>
         <th scope="col">Longitude</th>
         <th scope="col">Latitude</th>
@@ -12,7 +13,8 @@
     </thead>
     <tbody>
       <tr>
-        <th scope="row">{{location?.city | uppercase}} - {{location?.region_code}}</th>
+        <th scope="row">{{location?.city | uppercase}} </th>
+        <th scope="row">{{location?.region_code }} </th>
         <td>{{location?.ip}}</td>
         <td>{{location?.latitude}}</td>
         <td>{{location?.longitude}}</td>
@@ -28,16 +30,18 @@
         <th scope="col">Cidade</th>
         <th scope="col">Estado</th>
         <th scope="col">Cep</th>
-        <th scope="col">País</th>
+        <th scope="col">Latitude</th>
+        <th scope="col">Longitude</th>
 
       </tr>
     </thead>
     <tbody>
       <tr>
-        <th scope="row">{{position?.town | uppercase}}</th>
-        <td>{{position?.state | uppercase }}</td>
-        <td>{{position?.postcode}}</td>
-        <td>{{position?.country | uppercase }}</td>
+        <th scope="row">{{position?.address?.town | uppercase}}</th>
+        <td>{{position?.address?.state | uppercase }}</td>
+        <td>{{position?.address?.postcode}}</td>
+        <td>{{position?.lat }}</td>
+        <td>{{position?.lon }}</td>
       </tr>
     </tbody>
   </table>
