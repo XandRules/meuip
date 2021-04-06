@@ -33,7 +33,6 @@ export class AppComponent implements OnInit {
     });
 
     this.getUserLocation();
-    this.getLocationIp();
   }
 
   getLocation(latitude: number, longitude: number) {
@@ -67,14 +66,5 @@ export class AppComponent implements OnInit {
       );
     }
   }
-
-  getLocationIp(){
-    this.map.getLocationIp().subscribe(
-      location => {
-        this.locationIp = location;
-      }
-    )
-  }
-
 
 }
