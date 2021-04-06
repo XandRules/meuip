@@ -22,4 +22,10 @@ export class MapsService {
   getFreeLocationReverse(latitude: number, longitude: number): Observable<any>{
     return this.http.get<any>(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=pt`);
   }
+
+  getLocationIp(): Observable<any>{
+    return this.http.get<any>('https://api.ip2location.com/v2/?key=TYA1OMTVBA&package=WS24&format=json&addon=continent,country,region,city,geotargeting,country_groupings,time_zone_info&lang=en');
+  }
+
+
 }

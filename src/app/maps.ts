@@ -5,6 +5,10 @@ export interface Location {
   longitude: string;
   region_code?: string;
   principalSubdivision?: string;
+  city_name?: string;
+  zip_code?: string;
+  region_name?: string;
+  country_name?: string;
 
 }
 export interface Position {

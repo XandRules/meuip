@@ -69,5 +69,30 @@
       </tr>
     </tbody>
   </table>
+  <br>
+  <h2>API: <a href="https://www.ip2location.com/">www.ip2location.com</a></h2>
+  <table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Cidade</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Latitude</th>
+        <th scope="col">Longitude</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">{{locationIp?.city_name | uppercase}}</th>
+        <td>{{locationIp?.region_name | uppercase }}</td>
+        <td>{{locationIp?.latitude }}</td>
+        <td>{{locationIp?.longitude }}</td>
+      </tr>
+    </tbody>
+  </table>
 
 </div>
+
+<agm-map [zoom]="13" [latitude]="freeReverseLocation?.latitude" [longitude]="freeReverseLocation?.longitude">
+  <agm-marker [latitude]="freeReverseLocation?.latitude" [longitude]="freeReverseLocation?.longitude"></agm-marker>
+</agm-map>

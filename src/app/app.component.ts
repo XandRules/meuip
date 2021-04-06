@@ -18,6 +18,7 @@ export class AppComponent implements OnInit {
 
   location: Location = null;
   freeReverseLocation: Location = null;
+  locationIp: Location = null;
   position: Position;
 
   constructor(private map: MapsService) {
@@ -32,6 +33,7 @@ export class AppComponent implements OnInit {
     });
 
     this.getUserLocation();
+    this.getLocationIp();
   }
 
   getLocation(latitude: number, longitude: number) {
@@ -52,7 +54,8 @@ export class AppComponent implements OnInit {
 
   getUserLocation() {
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(position => {
+
+      navigator.geolocation.watchPosition(position => {
         this.lat = position.coords.latitude;
         this.lng = position.coords.longitude;
 
@@ -60,11 +63,17 @@ export class AppComponent implements OnInit {
         this.getFreeLocation(this.lat, this.lng);
       },
       error => console.log(error),
-      {enableHighAccuracy:true, maximumAge:30000, timeout:27000}
+      { enableHighAccuracy: true, maximumAge: 10, timeout: 30000 }
       );
-    } else {
-
     }
+  }
+
+  getLocationIp(){
+    this.map.getLocationIp().subscribe(
+      location => {
+        this.locationIp = location;
+      }
+    )
   }
 
 
