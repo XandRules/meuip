@@ -6,5 +6,13 @@ h1 {
 }
 
 agm-map {
-  height: 600px;
+  height: 400px;
+  width: inherit;
+}
+
+@media screen and (max-width: 600px) {
+  agm-map {
+    height: 400px;
+    width: 100vw;
+  }
 }
