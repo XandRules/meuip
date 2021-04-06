@@ -28,11 +28,21 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
 
     this.map.getLocation().subscribe((data: Location) => {
-      console.log(data);
       this.location = data;
     });
 
     this.getUserLocation();
+    this.getLocationByIp();
+  }
+
+  getLocationByIp(){
+    this.map.getIp().subscribe(
+      (position) => {
+        this.locationIp = position.location;
+
+        console.log(this.locationIp);
+      }
+    )
   }
 
   getLocation(latitude: number, longitude: number) {

@@ -3,11 +3,13 @@ export interface Location {
   ip?: string;
   latitude: string;
   longitude: string;
+  lat?: string;
+  lng?: string;
   region_code?: string;
   principalSubdivision?: string;
   city_name?: string;
   zip_code?: string;
-  region_name?: string;
+  region?: string;
   country_name?: string;
 
 }

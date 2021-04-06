@@ -16,3 +16,8 @@ agm-map {
     width: 100vw;
   }
 }
+
+.flex {
+  display: flex;
+  flex-direction: row;
+}

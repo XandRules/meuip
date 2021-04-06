@@ -2,6 +2,7 @@ import { environment } from './../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { mergeMap } from 'rxjs/operators';
 import { Location } from './maps';
 
 @Injectable({
@@ -23,9 +24,17 @@ export class MapsService {
     return this.http.get<any>(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=pt`);
   }
 
-  getLocationIp(): Observable<any>{
-    return this.http.get<any>('https://api.ip2location.com/v2/?key=TYA1OMTVBA&package=WS24&format=json&addon=continent,country,region,city,geotargeting,country_groupings,time_zone_info&lang=en');
+  getIp(): Observable<any>{
+    return this.http.get<any>('https://api.ipify.org?format=json').pipe(
+      mergeMap(ip => {
+        return this.http.get<any>(`https://geo.ipify.org/api/v1?apiKey=at_o8cVbz1gaHlGIFXRaB87CF52ioMMj&ipAddress=${ip.ip}`);
+      })
+    );
   }
 
 
+
+
 }
+
+

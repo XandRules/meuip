@@ -1,52 +1,83 @@
 
+<div class="container mt-3">
 
-<div class="container mt-5">
-  <h4>API: <a href="https://ipapi.com/">ipapi.com</a></h4>
-  <table class="table table-striped table-dark ">
-    <thead>
-      <tr>
-        <th scope="col">Cidade</th>
-        <th scope="col">Estado</th>
-        <th scope="col">IP</th>
-        <th scope="col">Latitude</th>
-        <th scope="col">Longitude</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">{{location?.city | uppercase}} </th>
-        <th scope="row">{{location?.region_code }} </th>
-        <td>{{location?.ip}}</td>
-        <td>{{location?.latitude}}</td>
-        <td>{{location?.longitude}}</td>
-      </tr>
+  <div class="row col-md-12">
+    <div class="card col-md-4">
+      <div class="card-body">
+        <h5 class="card-title">Ipapi  <span class="badge badge-warning ml-5">PAGO</span></h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{location?.city | uppercase}} </h6>
+        <h6 class="card-subtitle mb-2 text-muted">{{location?.region_code | uppercase}} </h6>
+        <h6 class="card-subtitle mb-2 text-muted">{{location?.latitude }} </h6>
+        <h6 class="card-subtitle mb-2 text-muted">{{location?.longitude }} </h6>
+        <h6 class="card-subtitle mb-2 text-muted">{{location?.ip }} </h6>
+        <a href="https://ipapi.com/documentation" class="card-link">Documentação</a>
+        <hr>
+        <h6 class="card-subtitle mb-2 text-muted">Preço: a partir de $8/Mês </h6>
+        <h6 class="card-subtitle mb-2 text-muted">Requisições: a partir de 50000/Mês </h6>
+      </div>
+    </div>
 
-    </tbody>
-  </table>
+    <div class="card col-md-4">
+      <div class="card-body">
+        <h5 class="card-title">Locationiq  <span class="badge badge-warning ml-5">PAGO</span></h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{position?.address?.town | uppercase}} </h6>
+        <h6 class="card-subtitle mb-2 text-muted">{{position?.address?.state | uppercase }} </h6>
+        <h6 class="card-subtitle mb-2 text-muted">{{position?.lat }} </h6>
+        <h6 class="card-subtitle mb-2 text-muted">{{position?.lon }} </h6>
+        <a href="https://locationiq.com/docs#reverse-geocoding" class="card-link">Documentação</a>
+        <hr>
+        <h6 class="card-subtitle mb-2 text-muted">Preço: A partir de $49/Mês </h6>
+        <h6 class="card-subtitle mb-2 text-muted">Requisições: A partir de 5000/dia Grátis</h6>
+        <h6 class="card-subtitle mb-2 text-muted">Requisições: A partir de 10000/dia Pago</h6>
+      </div>
+    </div>
 
-  <br>
-  <h4>API: <a href="https://locationiq.com/">locationiq.com</a></h4>
-  <table class="table table-striped table-dark">
-    <thead>
-      <tr>
-        <th scope="col">Cidade</th>
-        <th scope="col">Estado</th>
-        <th scope="col">Cep</th>
-        <th scope="col">Latitude</th>
-        <th scope="col">Longitude</th>
+    <div class="card col-md-4">
+      <div class="card-body">
+        <h5 class="card-title">Locationiq  <span class="badge badge-warning ml-5">PAGO</span></h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{position?.address?.town | uppercase}} </h6>
+        <h6 class="card-subtitle mb-2 text-muted">{{position?.address?.state | uppercase }} </h6>
+        <h6 class="card-subtitle mb-2 text-muted">{{position?.lat }} </h6>
+        <h6 class="card-subtitle mb-2 text-muted">{{position?.lon }} </h6>
+        <a href="https://ipapi.com/documentation" class="card-link">Documentação</a>
+        <hr>
+        <h6 class="card-subtitle mb-2 text-muted">Preço: a partir de $8 por Mês </h6>
+        <h6 class="card-subtitle mb-2 text-muted">Requisições: a partir de 50000 por Mês </h6>
+      </div>
+    </div>
 
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">{{position?.address?.town | uppercase}}</th>
-        <td>{{position?.address?.state | uppercase }}</td>
-        <td>{{position?.address?.postcode}}</td>
-        <td>{{position?.lat }}</td>
-        <td>{{position?.lon }}</td>
-      </tr>
-    </tbody>
-  </table>
+    <div class="card col-md-4">
+      <div class="card-body">
+        <h5 class="card-title">Locationiq  <span class="badge badge-warning ml-5">PAGO</span></h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{position?.address?.town | uppercase}} </h6>
+        <h6 class="card-subtitle mb-2 text-muted">{{position?.address?.state | uppercase }} </h6>
+        <h6 class="card-subtitle mb-2 text-muted">{{position?.lat }} </h6>
+        <h6 class="card-subtitle mb-2 text-muted">{{position?.lon }} </h6>
+        <a href="https://ipapi.com/documentation" class="card-link">Documentação</a>
+        <hr>
+        <h6 class="card-subtitle mb-2 text-muted">Preço: a partir de $8 por Mês </h6>
+        <h6 class="card-subtitle mb-2 text-muted">Requisições: a partir de 50000 por Mês </h6>
+      </div>
+    </div>
+
+    <div class="card col-md-4">
+      <div class="card-body">
+        <h5 class="card-title">Locationiq  <span class="badge badge-warning ml-5">PAGO</span></h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{position?.address?.town | uppercase}} </h6>
+        <h6 class="card-subtitle mb-2 text-muted">{{position?.address?.state | uppercase }} </h6>
+        <h6 class="card-subtitle mb-2 text-muted">{{position?.lat }} </h6>
+        <h6 class="card-subtitle mb-2 text-muted">{{position?.lon }} </h6>
+        <a href="https://ipapi.com/documentation" class="card-link">Documentação</a>
+        <hr>
+        <h6 class="card-subtitle mb-2 text-muted">Preço: a partir de $8 por Mês </h6>
+        <h6 class="card-subtitle mb-2 text-muted">Requisições: a partir de 50000 por Mês </h6>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+ <div class="container">
 
   <br>
   <h4>API: <a href="https://www.bigdatacloud.com/">www.bigdatacloud.com</a></h4>
@@ -70,11 +101,33 @@
     </tbody>
   </table>
 
+  <br>
+  <h4>API: <a href="https://geo.ipify.org/">geo.ipify.org</a></h4>
+  <table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Cidade</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Latitude</th>
+        <th scope="col">Longitude</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">{{locationIp?.city | uppercase}}</th>
+        <td>{{locationIp?.region | uppercase }}</td>
+        <td>{{locationIp?.lat }}</td>
+        <td>{{locationIp?.lng }}</td>
+      </tr>
+    </tbody>
+  </table>
+
 
 </div>
 
 <div class="container">
-  <agm-map [zoom]="13" [latitude]="freeReverseLocation?.latitude" [longitude]="freeReverseLocation?.longitude">
-    <agm-marker [latitude]="freeReverseLocation?.latitude" [longitude]="freeReverseLocation?.longitude"></agm-marker>
+  <agm-map [zoom]="13" [latitude]="locationIp?.lat" [longitude]="locationIp?.lng">
+    <agm-marker [latitude]="locationIp?.lat" [longitude]="locationIp?.lng"></agm-marker>
   </agm-map>
 </div>
