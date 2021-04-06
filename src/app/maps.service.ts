@@ -18,4 +18,8 @@ export class MapsService {
   getLocationReverse(latitude: number, longitude: number): Observable<any>{
     return this.http.get<any>(`https://us1.locationiq.com/v1/reverse.php?key=pk.a7e64683f0208bfabb1d8178580fd672&lat=${latitude}&lon=${longitude}&format=json`);
   }
+
+  getFreeLocationReverse(latitude: number, longitude: number): Observable<any>{
+    return this.http.get<any>(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=pt`);
+  }
 }

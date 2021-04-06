@@ -1,22 +1,6 @@
 import { MapsService } from './maps.service';
 import { Component, OnInit } from '@angular/core';
-import { Location } from './maps';
-
-interface Position {
-  address : {
-    country:string;
-    country_code:string;
-    postcode:string;
-    restaurant:string;
-    road:string;
-    state:string;
-    state_district:string;
-    suburb:string;
-    town:string;
-  },
-  lat: string;
-  lon: string;
-}
+import { Location, Position } from './maps';
 
 @Component({
   selector: 'app-root',
@@ -33,6 +17,7 @@ export class AppComponent implements OnInit {
   longitude: number;
 
   location: Location = null;
+  freeReverseLocation: Location = null;
   position: Position;
 
   constructor(private map: MapsService) {
@@ -57,6 +42,14 @@ export class AppComponent implements OnInit {
     )
   }
 
+  getFreeLocation(latitude: number, longitude: number) {
+    this.map.getFreeLocationReverse(latitude, longitude).subscribe(
+      (data) => {
+        this.freeReverseLocation = data;
+      }
+    )
+  }
+
   getUserLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
@@ -64,6 +57,7 @@ export class AppComponent implements OnInit {
         this.lng = position.coords.longitude;
 
         this.getLocation(this.lat, this.lng);
+        this.getFreeLocation(this.lat, this.lng);
       },
       error => console.log(error),
       {enableHighAccuracy:true, maximumAge:30000, timeout:27000}
