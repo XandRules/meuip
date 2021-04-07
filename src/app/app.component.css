@@ -17,7 +17,6 @@ agm-map {
   }
 }
 
-.flex {
-  display: flex;
-  flex-direction: row;
+.card {
+margin: 10px auto;
 }

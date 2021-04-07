@@ -2,7 +2,7 @@
 <div class="container mt-3">
 
   <div class="row col-md-12">
-    <div class="card col-md-4">
+    <div class="card col-md-5 col-12 col-lg-5">
       <div class="card-body">
         <h5 class="card-title">Ipapi  <span class="badge badge-warning ml-5">PAGO</span></h5>
         <h6 class="card-subtitle mb-2 text-muted">{{location?.city | uppercase}} </h6>
@@ -17,7 +17,7 @@
       </div>
     </div>
 
-    <div class="card col-md-4">
+    <div class="card col-md-5 col-12 col-lg-5">
       <div class="card-body">
         <h5 class="card-title">Locationiq  <span class="badge badge-warning ml-5">PAGO</span></h5>
         <h6 class="card-subtitle mb-2 text-muted">{{position?.address?.town | uppercase}} </h6>
@@ -32,102 +32,63 @@
       </div>
     </div>
 
-    <div class="card col-md-4">
+    <div class="card col-md-5 col-12 col-lg-5">
       <div class="card-body">
-        <h5 class="card-title">Locationiq  <span class="badge badge-warning ml-5">PAGO</span></h5>
-        <h6 class="card-subtitle mb-2 text-muted">{{position?.address?.town | uppercase}} </h6>
-        <h6 class="card-subtitle mb-2 text-muted">{{position?.address?.state | uppercase }} </h6>
-        <h6 class="card-subtitle mb-2 text-muted">{{position?.lat }} </h6>
-        <h6 class="card-subtitle mb-2 text-muted">{{position?.lon }} </h6>
-        <a href="https://ipapi.com/documentation" class="card-link">Documentação</a>
+        <h5 class="card-title">BigDataCloud  <span class="badge badge-primary ml-5">Grátis*</span></h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{freeReverseLocation?.city | uppercase}} </h6>
+        <h6 class="card-subtitle mb-2 text-muted">{{freeReverseLocation?.principalSubdivision | uppercase}} </h6>
+        <h6 class="card-subtitle mb-2 text-muted">{{freeReverseLocation?.latitude }} </h6>
+        <h6 class="card-subtitle mb-2 text-muted">{{freeReverseLocation?.longitude }} </h6>
+        <a href="https://www.bigdatacloud.com/geocoding-apis/free-reverse-geocode-to-city-api#%22" class="card-link">Documentação</a>
         <hr>
-        <h6 class="card-subtitle mb-2 text-muted">Preço: a partir de $8 por Mês </h6>
-        <h6 class="card-subtitle mb-2 text-muted">Requisições: a partir de 50000 por Mês </h6>
+        <h6 class="card-subtitle mb-2 text-muted">Preço: Serviço utilizado Grátis </h6>
+        <h6 class="card-subtitle mb-2 text-muted">Contém planos pagos </h6>
       </div>
     </div>
 
-    <div class="card col-md-4">
+    <div class="card col-md-5 col-12 col-lg-5">
       <div class="card-body">
-        <h5 class="card-title">Locationiq  <span class="badge badge-warning ml-5">PAGO</span></h5>
-        <h6 class="card-subtitle mb-2 text-muted">{{position?.address?.town | uppercase}} </h6>
-        <h6 class="card-subtitle mb-2 text-muted">{{position?.address?.state | uppercase }} </h6>
-        <h6 class="card-subtitle mb-2 text-muted">{{position?.lat }} </h6>
-        <h6 class="card-subtitle mb-2 text-muted">{{position?.lon }} </h6>
-        <a href="https://ipapi.com/documentation" class="card-link">Documentação</a>
+        <h5 class="card-title">Ipify  <span class="badge badge-warning ml-5">PAGO</span></h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{locationIp?.city | uppercase}} </h6>
+        <h6 class="card-subtitle mb-2 text-muted">{{locationIp?.region | uppercase }} </h6>
+        <h6 class="card-subtitle mb-2 text-muted">{{locationIp?.lat }} </h6>
+        <h6 class="card-subtitle mb-2 text-muted">{{locationIp?.lng }} </h6>
+        <a href="https://geo.ipify.org/docs" class="card-link">Documentação</a>
         <hr>
-        <h6 class="card-subtitle mb-2 text-muted">Preço: a partir de $8 por Mês </h6>
-        <h6 class="card-subtitle mb-2 text-muted">Requisições: a partir de 50000 por Mês </h6>
-      </div>
-    </div>
-
-    <div class="card col-md-4">
-      <div class="card-body">
-        <h5 class="card-title">Locationiq  <span class="badge badge-warning ml-5">PAGO</span></h5>
-        <h6 class="card-subtitle mb-2 text-muted">{{position?.address?.town | uppercase}} </h6>
-        <h6 class="card-subtitle mb-2 text-muted">{{position?.address?.state | uppercase }} </h6>
-        <h6 class="card-subtitle mb-2 text-muted">{{position?.lat }} </h6>
-        <h6 class="card-subtitle mb-2 text-muted">{{position?.lon }} </h6>
-        <a href="https://ipapi.com/documentation" class="card-link">Documentação</a>
-        <hr>
-        <h6 class="card-subtitle mb-2 text-muted">Preço: a partir de $8 por Mês </h6>
-        <h6 class="card-subtitle mb-2 text-muted">Requisições: a partir de 50000 por Mês </h6>
+        <h6 class="card-subtitle mb-2 text-muted">Preço: a partir de $15 por Mês </h6>
+        <h6 class="card-subtitle mb-2 text-muted">Requisições: a partir de 10000 por Mês </h6>
       </div>
     </div>
 
   </div>
 </div>
 
- <div class="container">
-
-  <br>
-  <h4>API: <a href="https://www.bigdatacloud.com/">www.bigdatacloud.com</a></h4>
-  <table class="table table-striped table-dark">
-    <thead>
-      <tr>
-        <th scope="col">Cidade</th>
-        <th scope="col">Estado</th>
-        <th scope="col">Latitude</th>
-        <th scope="col">Longitude</th>
-
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">{{freeReverseLocation?.city | uppercase}}</th>
-        <td>{{freeReverseLocation?.principalSubdivision | uppercase }}</td>
-        <td>{{freeReverseLocation?.latitude }}</td>
-        <td>{{freeReverseLocation?.longitude }}</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <br>
-  <h4>API: <a href="https://geo.ipify.org/">geo.ipify.org</a></h4>
-  <table class="table table-striped table-dark">
-    <thead>
-      <tr>
-        <th scope="col">Cidade</th>
-        <th scope="col">Estado</th>
-        <th scope="col">Latitude</th>
-        <th scope="col">Longitude</th>
-
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">{{locationIp?.city | uppercase}}</th>
-        <td>{{locationIp?.region | uppercase }}</td>
-        <td>{{locationIp?.lat }}</td>
-        <td>{{locationIp?.lng }}</td>
-      </tr>
-    </tbody>
-  </table>
-
-
-</div>
 
 <div class="container">
-  <agm-map [zoom]="13" [latitude]="locationIp?.lat" [longitude]="locationIp?.lng">
-    <agm-marker [latitude]="locationIp?.lat" [longitude]="locationIp?.lng"></agm-marker>
-  </agm-map>
+  <div class="row col-md-12">
+    <div class="card col-md-5 col-12 col-lg-5">
+      <h5 class="card-title">Ipapi  <span class="badge badge-warning ml-5">PAGO</span></h5>
+      <agm-map [zoom]="16" [latitude]="location?.latitude" [longitude]="location?.longitude">
+        <agm-marker [latitude]="location?.latitude" [longitude]="location?.longitude"></agm-marker>
+      </agm-map>
+    </div>
+    <div class="card col-md-5 col-12 col-lg-5">
+      <h5 class="card-title">Locationiq  <span class="badge badge-warning ml-5">PAGO</span></h5>
+      <agm-map [zoom]="16" [latitude]="position?.lat" [longitude]="position?.lon">
+        <agm-marker [latitude]="position?.lat" [longitude]="position?.lon"></agm-marker>
+      </agm-map>
+    </div>
+    <div class="card col-md-5 col-12 col-lg-5">
+      <h5 class="card-title">BigDataCloud  <span class="badge badge-primary ml-5">Grátis*</span></h5>
+      <agm-map [zoom]="16" [latitude]="freeReverseLocation?.latitude" [longitude]="freeReverseLocation?.longitude">
+        <agm-marker [latitude]="freeReverseLocation?.latitude" [longitude]="freeReverseLocation?.longitude"></agm-marker>
+      </agm-map>
+    </div>
+    <div class="card col-md-5 col-12 col-lg-5">
+      <h5 class="card-title">Ipify  <span class="badge badge-warning ml-5">PAGO</span></h5>
+      <agm-map [zoom]="16" [latitude]="locationIp?.lat" [longitude]="locationIp?.lng">
+        <agm-marker [latitude]="locationIp?.lat" [longitude]="locationIp?.lng"></agm-marker>
+      </agm-map>
+    </div>
+  </div>
 </div>
