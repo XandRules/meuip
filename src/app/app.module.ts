@@ -5,6 +5,7 @@ import { HttpClientModule } from "@angular/common/http";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     HttpClientModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDjjhBkgAKZWeg4IoXKkx4pNK6jVwnv9LE'
+      apiKey: environment.GOOGLE_MAPS_PLOT_KEY
     })
   ],
   providers: [],

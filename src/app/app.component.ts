@@ -36,95 +36,86 @@ export class AppComponent implements OnInit {
     this.getUserLocation();
     this.getLocationByIp();
   }
-  
-  getLocationByIp(){
+
+  getLocationByIp() {
     this.map.getIp().subscribe(
       (position) => {
         this.locationIp = position.location;
-        
+
         console.log(this.locationIp);
       }
-      )
-    }
-    
-    getOpenCage(latitude: number, longitude: number) {
+    )
+  }
+
+  getOpenCage(latitude: number, longitude: number) {
     this.map.getOpenCage(latitude, longitude).subscribe(
       (data) => {
         this.position2 = data.results[0].components;
-
-        // console.log('Opencage payload', data)
-
-        // console.log('OpenCage', this.position2)
       }
-      )
-    }
-    
-    getGoogleMaps(latitude: number, longitude: number) {
+    )
+  }
+
+  getGoogleMaps(latitude: number, longitude: number) {
     this.map.getGoogleMaps(latitude, longitude).subscribe(
       (data) => {
-
-        // console.log('Google Maps payload', data.results)
 
         var gmaps: any;
         var city: string;
         var state: string;
 
         data.results.forEach(element => {
-          if(element.types == 'street_address'){
+          if (element.types == 'street_address') {
             gmaps = element;
           }
         });
 
-        console.log(gmaps)
-
         gmaps.address_components.forEach(element => {
-          if(element?.types.includes('administrative_area_level_2')){
-           city = element?.long_name
+          if (element?.types.includes('administrative_area_level_2')) {
+            city = element?.long_name
           }
-          if(element?.types.includes('administrative_area_level_1')){
+          if (element?.types.includes('administrative_area_level_1')) {
             state = element?.long_name
           }
         });
 
-        this.googleMaps = { cidade: city, estado: state, lat: gmaps.geometry.location.lat, lng: gmaps.geometry.location.lng};
+        this.googleMaps = { cidade: city, estado: state, lat: gmaps.geometry.location.lat, lng: gmaps.geometry.location.lng };
 
-        console.log(this.googleMaps);
       }
-      )
-    }
+    )
+  }
 
 
 
-    getLocation(latitude: number, longitude: number) {
-      this.map.getLocationReverse(latitude, longitude).subscribe(
+  getLocation(latitude: number, longitude: number) {
+    this.map.getLocationReverse(latitude, longitude).subscribe(
       (data) => {
         this.position = data;
       }
-      )
-    }
-    
-    getFreeLocation(latitude: number, longitude: number) {
-      this.map.getFreeLocationReverse(latitude, longitude).subscribe(
-        (data) => {
-          this.freeReverseLocation = data;
-        }
-        )
+    )
+  }
+
+  getFreeLocation(latitude: number, longitude: number) {
+    this.map.getFreeLocationReverse(latitude, longitude).subscribe(
+      (data) => {
+        this.freeReverseLocation = data;
       }
-      
+    )
+  }
+
   getUserLocation() {
     if (navigator.geolocation) {
-      
+
       navigator.geolocation.watchPosition(position => {
         this.lat = position.coords.latitude;
         this.lng = position.coords.longitude;
-        
+
         this.getLocation(this.lat, this.lng);
         this.getFreeLocation(this.lat, this.lng);
-        this.getOpenCage(this.lat,this.lng);
+        this.getOpenCage(this.lat, this.lng);
         this.getGoogleMaps(this.lat, this.lng);
       },
-      error => console.log(error),
-      { enableHighAccuracy: true, maximumAge: 10, timeout: 30000 }
+        error => console.log(error),
+        { enableHighAccuracy: true, maximumAge: 10, timeout: 30000 }
       );
     }
   }
