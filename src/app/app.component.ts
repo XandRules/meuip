@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
     });
 
     this.getUserLocation();
-    this.getLocationByIp();
+    // this.getLocationByIp();
   }
 
   getLocationByIp() {
