@@ -1,8 +1,8 @@
 
-<div class="container mt-3">
+<div class=" mt-3">
 
   <div class="row col-md-12">
-    <div class="card col-md-5 col-12 col-lg-5">
+    <!-- <div class="card col-md-5 col-12 col-lg-5">
       <div class="card-body">
         <h5 class="card-title">Ipapi  <span class="badge badge-warning ml-5">PAGO</span></h5>
         <h6 class="card-subtitle mb-2 text-muted">{{location?.city | uppercase}} </h6>
@@ -30,9 +30,9 @@
         <h6 class="card-subtitle mb-2 text-muted">Requisições: A partir de 5000/dia Grátis</h6>
         <h6 class="card-subtitle mb-2 text-muted">Requisições: A partir de 10000/dia Pago</h6>
       </div>
-    </div>
+    </div> -->
 
-    <div class="card col-md-5 col-12 col-lg-5">
+    <div class="card col-md-4 col-12 col-lg-4">
       <div class="card-body">
         <h5 class="card-title">BigDataCloud  <span class="badge badge-primary ml-5">Grátis*</span></h5>
         <h6 class="card-subtitle mb-2 text-muted">{{freeReverseLocation?.city | uppercase}} </h6>
@@ -46,27 +46,40 @@
       </div>
     </div>
 
-    <div class="card col-md-5 col-12 col-lg-5">
+    <div class="card col-md-4 col-12 col-lg-4">
       <div class="card-body">
-        <h5 class="card-title">Ipify  <span class="badge badge-warning ml-5">PAGO</span></h5>
-        <h6 class="card-subtitle mb-2 text-muted">{{locationIp?.city | uppercase}} </h6>
-        <h6 class="card-subtitle mb-2 text-muted">{{locationIp?.region | uppercase }} </h6>
-        <h6 class="card-subtitle mb-2 text-muted">{{locationIp?.lat }} </h6>
-        <h6 class="card-subtitle mb-2 text-muted">{{locationIp?.lng }} </h6>
-        <a href="https://geo.ipify.org/docs" class="card-link">Documentação</a>
+        <h5 class="card-title">OpenCage  <span class="badge badge-warning ml-5">PAGO</span></h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{position2?.town | uppercase}} </h6>
+        <h6 class="card-subtitle mb-2 text-muted">{{position2?.state | uppercase }} </h6>
+        <h6 class="card-subtitle mb-2 text-muted">{{lat }} </h6>
+        <h6 class="card-subtitle mb-2 text-muted">{{lng }} </h6>
+        <a href="https://opencagedata.com/api" class="card-link">Documentação</a>
         <hr>
-        <h6 class="card-subtitle mb-2 text-muted">Preço: a partir de $15 por Mês </h6>
-        <h6 class="card-subtitle mb-2 text-muted">Requisições: a partir de 10000 por Mês </h6>
+        <h6 class="card-subtitle mb-2 text-muted">Preço: 2500 request grátis por dia </h6>
       </div>
     </div>
 
+    <div class="card col-md-4 col-12 col-lg-4">
+      <div class="card-body">
+        <h5 class="card-title">GoogleMaps  <span class="badge badge-warning ml-5">PAGO</span></h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{googleMaps?.cidade | uppercase}} </h6>
+        <h6 class="card-subtitle mb-2 text-muted">{{googleMaps?.estado | uppercase }} </h6>
+        <h6 class="card-subtitle mb-2 text-muted">{{googleMaps?.lat }} </h6>
+        <h6 class="card-subtitle mb-2 text-muted">{{googleMaps?.lng }} </h6>
+        <a href="https://developers.google.com/maps/documentation/geocoding/start" class="card-link">Documentação</a>
+        <hr>
+        <h6 class="card-subtitle mb-2 text-muted">Preço: Bônus de $200 por mês </h6>
+        <h6 class="card-subtitle mb-2 text-muted">40000 request/mês a casa 1000 $5 </h6>
+      </div>
+    </div>
+    
   </div>
 </div>
 
 
-<div class="container">
+<div class="">
   <div class="row col-md-12">
-    <div class="card col-md-5 col-12 col-lg-5">
+    <!-- <div class="card col-md-5 col-12 col-lg-5">
       <h5 class="card-title">Ipapi  <span class="badge badge-warning ml-5">PAGO</span></h5>
       <agm-map [zoom]="16" [latitude]="location?.latitude" [longitude]="location?.longitude">
         <agm-marker [latitude]="location?.latitude" [longitude]="location?.longitude"></agm-marker>
@@ -77,18 +90,25 @@
       <agm-map [zoom]="16" [latitude]="position?.lat" [longitude]="position?.lon">
         <agm-marker [latitude]="position?.lat" [longitude]="position?.lon"></agm-marker>
       </agm-map>
-    </div>
-    <div class="card col-md-5 col-12 col-lg-5">
+    </div> -->
+    <div class="card col-md-4 col-12 col-lg-4">
       <h5 class="card-title">BigDataCloud  <span class="badge badge-primary ml-5">Grátis*</span></h5>
       <agm-map [zoom]="16" [latitude]="freeReverseLocation?.latitude" [longitude]="freeReverseLocation?.longitude">
         <agm-marker [latitude]="freeReverseLocation?.latitude" [longitude]="freeReverseLocation?.longitude"></agm-marker>
       </agm-map>
     </div>
-    <div class="card col-md-5 col-12 col-lg-5">
-      <h5 class="card-title">Ipify  <span class="badge badge-warning ml-5">PAGO</span></h5>
-      <agm-map [zoom]="16" [latitude]="locationIp?.lat" [longitude]="locationIp?.lng">
-        <agm-marker [latitude]="locationIp?.lat" [longitude]="locationIp?.lng"></agm-marker>
+    <div class="card col-md-4 col-12 col-lg-4">
+      <h5 class="card-title">OpenCage  <span class="badge badge-warning ml-5">PAGO</span></h5>
+      <agm-map [zoom]="16" [latitude]="lat" [longitude]="lng">
+        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
       </agm-map>
     </div>
+    <div class="card col-md-4 col-12 col-lg-4">
+      <h5 class="card-title">GoogleMaps  <span class="badge badge-warning ml-5">PAGO</span></h5>
+      <agm-map [zoom]="16" [latitude]="googleMaps?.lat" [longitude]="googleMaps?.lng">
+        <agm-marker [latitude]="googleMaps?.lat" [longitude]="googleMaps?.lng"></agm-marker>
+      </agm-map>
+    </div>
+    <br class="mt-5">
   </div>
 </div>

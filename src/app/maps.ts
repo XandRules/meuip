@@ -29,3 +29,21 @@ export interface Position {
   lon: string;
 }
 
+export interface Position2 {
+  state:string;
+  state_code:string;
+  road:string;
+  town:string;
+}
+
+export interface GoogleMaps {
+  address: {
+    city: string;
+    state: string;
+  },
+  position: {
+    lat: string;
+    lng: string;
+  }
+}
+

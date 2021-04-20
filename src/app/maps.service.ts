@@ -24,6 +24,14 @@ export class MapsService {
     return this.http.get<any>(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=pt`);
   }
 
+  getOpenCage(latitude: number, longitude: number): Observable<any>{
+    return this.http.get<any>(`https://api.opencagedata.com/geocode/v1/json?q=${latitude},${longitude}&key=${environment.OPEN_CAGE_KEY}`);
+  }
+
+  getGoogleMaps(latitude: number, longitude: number): Observable<any>{
+    return this.http.get<any>(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${environment.GOOGLE_MAPS_KEY}`);
+  }
+  
   getIp(): Observable<any>{
     return this.http.get<any>('https://api.ipify.org?format=json').pipe(
       mergeMap(ip => {
